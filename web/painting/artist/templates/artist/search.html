@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}artist 검색{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container-fluid" style="position: relative; z-index: 2;">
+  <ul class="nav flex-column nav-tabs col-2">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Style</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Genre</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Artist</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container-fluid" style="position: relative; z-index: 1;  margin-top: -100px;">
+  <img
+    class="rounded mx-auto d-block img-fluid"
+    src="{% static 'img/file.png' %}" alt=""
+    onclick="location='/artist/upload'"
+    style="cursor: pointer;"
+  >
+  <br>
+  <div class="d-grid gap-2 col-2 mx-auto">
+    <button class="btn btn-primary" type="button" onclick="location='/artist/result'">거엄새액</button>
+  </div>
+</div>
+{% endblock %}
