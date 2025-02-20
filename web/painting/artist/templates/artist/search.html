@@ -16,16 +16,24 @@
   </ul>
 </div>
 
+
 <div class="container-fluid" style="position: relative; z-index: 1;  margin-top: -100px;">
-  <img
-    class="rounded mx-auto d-block img-fluid"
-    src="{% static 'img/file.png' %}" alt=""
-    onclick="location='/artist/upload'"
-    style="cursor: pointer;"
-  >
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <img
+      class="rounded mx-auto d-block img-fluid"
+      src="{% static 'img/file.png' %}" alt="">
+
+    <input class= "d-block mx-auto" type="file" name="image" id="image" accept="image/*">
+
+    <br>
+
+    <div class="d-grid gap-2 col-2 mx-auto">
+      <button class="btn btn-primary" type="submit" onclick="location='/artist/result'">Upload</button>
+    </div>
+  </form>
+
   <br>
-  <div class="d-grid gap-2 col-2 mx-auto">
-    <button class="btn btn-primary" type="button" onclick="location='/artist/result'">거엄새액</button>
-  </div>
+
 </div>
 {% endblock %}
