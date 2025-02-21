@@ -1,14 +1,14 @@
 import csv
-from artist.models import artist
+from style.models import style
 import os
 
 filepath=r'D:\ai\Downloads\Data\paintings\data'
 
-with open(os.path.join(filepath,'artist.csv'), newline='', encoding='utf-8') as csvfile:
+with open(os.path.join(filepath,'style.csv'), newline='', encoding='utf-8') as csvfile:
 	reader = csv.DictReader(csvfile)
 	for row in reader:
-		artist.objects.create(
-			artist=row['style']
+		style.objects.create(
+			style=row['style']
 		)
 
 print('완료')

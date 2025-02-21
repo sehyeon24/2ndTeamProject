@@ -2,4 +2,6 @@
 {% block title %}artist 예측결과{% endblock %}
 {% block content %}
 {% load static %}
+<img src="{{ img_url }}" alt="Uploaded Image" class="img-fluid rounded mx-auto d-block">
+<p>예측된 화가: {{ pred }}</p>
 {% endblock %}
