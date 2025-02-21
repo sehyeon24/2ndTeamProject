@@ -7,6 +7,8 @@ import numpy as np
 import os
 from artist.ai_model import extract_features, predict
 from django.http import JsonResponse
+import requests
+from bs4 import BeautifulSoup
 
 
 def search(request):
@@ -59,4 +61,17 @@ def result(request):
   if prediction is None:
     return JsonResponse({"error": "Prediction failed"}, status=500)
 
-  return render(request, 'artist/result.html', {'img_url': img_url, 'pred':prediction})
+  url = "https://www.wikiart.org/en/"+prediction
+  response = requests.get(url)
+
+  # 응답이 정상인지 확인
+  if response.status_code == 200:
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    # <article> 태그만 추출
+    article = soup.find("article")
+    artist_html = str(article) if article else "<p>정보를 가져올 수 없습니다.</p>"
+  else:
+    artist_html = "<p>페이지를 불러오는 데 실패했습니다.</p>"
+
+  return render(request, 'artist/result.html', {'img_url': img_url, 'pred':prediction, "artist_html": artist_html})
