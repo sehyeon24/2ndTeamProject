@@ -1,8 +1,8 @@
 import os
 import numpy as np
 import joblib  # joblib 라이브러리로 모델 로딩
-from keras.applications import VGG16
-from keras.models import Model
+from tensorflow.keras.applications import VGG16
+from tensorflow.keras.models import Model
 from django.conf import settings
 from PIL import Image
 import tensorflow as tf
@@ -13,8 +13,9 @@ model = Model(inputs=base_model.input, outputs=tf.keras.layers.GlobalAveragePool
 
 # 학습된 Keras 모델 로드 (예시로 model.h5 파일 사용)
 MODEL_PATH = os.path.join(settings.BASE_DIR, "model", "xgb_artist_model.joblib")
+LABEL_PATH = os.path.join(settings.BASE_DIR, "model", "artist_label.pkl")
 xgb_model = joblib.load(MODEL_PATH)
-
+le = joblib.load(LABEL_PATH)
 
 def extract_features(full_img_path):
   """
@@ -40,6 +41,7 @@ def predict(features):
   """
   try:
     prediction = xgb_model.predict(features)  # 특징 벡터를 모델에 입력
+    prediction = le.inverse_transform(prediction)
     return prediction[0]  # 예측된 클래스 반환
   except Exception as e:
     print(f"Prediction error: {e}")
