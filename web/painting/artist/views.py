@@ -68,10 +68,24 @@ def result(request):
   if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
 
-    # <article> 태그만 추출
+    # <article> 태그 가져오기
     article = soup.find("article")
-    artist_html = str(article) if article else "<p>정보를 가져올 수 없습니다.</p>"
-  else:
-    artist_html = "<p>페이지를 불러오는 데 실패했습니다.</p>"
 
-  return render(request, 'artist/result.html', {'img_url': img_url, 'pred':prediction, "artist_html": artist_html})
+    if article:
+      # 특정 클래스를 가진 <li> 요소 제거
+      for li in article.find_all("li", class_="order-reproduction"):
+        li.decompose()  # 해당 요소 삭제
+
+      for li in soup.find_all("li"):
+        for a_tag in li.find_all('a'):
+          if a_tag and not a_tag["href"].startswith("http"):
+            a_tag.unwrap()  # <a> 태그를 제거하고 내부 텍스트만 유지
+
+      # 변경된 HTML을 문자열로 변환
+      artist_html = str(article)
+
+    else:
+      artist_html = "<p>정보를 가져올 수 없습니다.</p>"
+
+
+  return render(request, 'artist/result.html', {'img_url': img_url, "artist_html": artist_html})
