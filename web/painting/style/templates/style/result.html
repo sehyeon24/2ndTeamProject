@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}style 예측결과{% endblock %}
+{% block content %}
+{% load static %}
+<img src="{{ img_url }}" alt="Uploaded Image" class="img-fluid rounded mx-auto d-block">
+<div class="mx-auto d-block" style="width: 40%; margin: 0 auto;">
+    <!-- 예측 결과 아래 원본 HTML 추가 -->
+    {{ style_html | safe }}
+</div>
+{% endblock %}
