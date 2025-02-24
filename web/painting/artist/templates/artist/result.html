@@ -4,10 +4,7 @@
 {% load static %}
 <img src="{{ img_url }}" alt="Uploaded Image" class="img-fluid rounded mx-auto d-block">
 <div class="mx-auto d-block" style="width: 40%; margin: 0 auto;">
-    <p>예측된 화가 : {{ pred }}</p>
     <!-- 예측 결과 아래 원본 HTML 추가 -->
-    <div class="artist-info">
-        {{ artist_html|safe }}
-    </div>
+    {{ artist_html|safe }}
 </div>
 {% endblock %}
