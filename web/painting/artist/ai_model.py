@@ -44,5 +44,6 @@ def predict(features):
     prediction = le.inverse_transform(prediction)
     return prediction[0]  # 예측된 클래스 반환
   except Exception as e:
+    
     print(f"Prediction error: {e}")
     return None
