@@ -1,0 +1,14 @@
+import csv
+from style.models import style
+import os
+
+filepath=r'D:\ai\Downloads\Data\paintings\data'
+
+with open(os.path.join(filepath,'style.csv'), newline='', encoding='utf-8') as csvfile:
+	reader = csv.DictReader(csvfile)
+	for row in reader:
+		style.objects.create(
+			style=row['style']
+		)
+
+print('완료')
