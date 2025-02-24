@@ -89,3 +89,4 @@ def result(request):
 
 
   return render(request, 'artist/result.html', {'img_url': img_url, "artist_html": artist_html})
+  
