@@ -23,6 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('artist.urls')),
     path('artist/', include('artist.urls')),
-    # path('genre/', include('genre.urls')),
+    path('genre/', include('genre.urls')),
     # path('style/', include('style.urls')),
 ]

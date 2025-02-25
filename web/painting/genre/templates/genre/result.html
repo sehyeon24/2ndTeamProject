@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}genre 예측결과{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- 업로드된 이미지 표시 -->
+<img src="{{ img_url }}" alt="Uploaded Image" class="img-fluid rounded mx-auto d-block"><br>
+
+<!-- 예측 결과 -->
+<div class="mx-auto d-block" style="text-align: center; margin: 0 auto; font-weight: bold; color: black; font-size: 24px;">
+    <p>예측결과 : {{pred}}<p> <br>
+</div>
+<!-- 부모 컨테이너: 한 줄에 3개씩 배치되도록 설정 -->
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; max-width: 1200px; margin: auto;">
+    {% for row in group_artists %}
+        {% for artist in row %}
+            {% if artist %}
+                <!-- 하나의 아티스트 카드 -->
+                <div class="artist-card" style="
+                    border: 1px solid #ddd;
+                    padding: 20px;
+                    width: 30%;  /* 한 줄에 3개 배치 */
+                    min-width: 280px;
+                    min-height: 220px;
+                    display: flex;
+                    flex-direction: column; /* 내부 요소를 세로 정렬 */
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
+                    <p style="margin: 5px 0; font-weight: bold;">artist_name</p>
+                    <p style="margin: 5px 0;">{{ artist.name }}</p>
+                    <p style="margin: 5px 0; font-weight: bold;">artist_info</p>
+                    <p style="margin: 5px 0;">{{ artist.info }}</p>
+                    <p style="margin: 5px 0; font-weight: bold;">painting_count</p>
+                    <p style="margin: 5px 0;">{{ artist.count }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
