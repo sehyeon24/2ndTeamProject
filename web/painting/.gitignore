@@ -2,3 +2,7 @@
 .venv/
 .env
 model/
+painting/__pycache__/
+genre/__pycache__/
+artist/__pycache__/
+style/__pycache__/

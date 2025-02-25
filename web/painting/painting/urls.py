@@ -23,6 +23,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('artist.urls')),
     path('artist/', include('artist.urls')),
+<<<<<<< HEAD
+    path('genre/', include('genre.urls')),
+    # path('style/', include('style.urls')),
+=======
     # path('genre/', include('genre.urls')),
     path('style/', include('style.urls')),
+>>>>>>> bac6e40d125d7fe88aa4b33fae07fea7637085ab
 ]
