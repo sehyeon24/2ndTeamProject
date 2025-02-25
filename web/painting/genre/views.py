@@ -106,7 +106,6 @@ def result(request):
     group_artists = group_list(artist_data, 3)
 
   else:
-    # genre_html = "<p>정보를 가져올 수 없습니다.</p>"
-    group_artists = []
+    group_artists  = "<p>정보를 가져올 수 없습니다.</p>"
 
   return render(request, 'genre/result.html', {'img_url': img_url, "group_artists": group_artists, "pred": prediction})
