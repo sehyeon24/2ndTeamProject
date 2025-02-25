@@ -3,9 +3,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.conf import settings
 from PIL import Image
-import numpy as np
 import os
-from artist.ai_model import extract_features, predict
+from style.ai_model import extract_features, predict
 from django.http import JsonResponse
 import requests
 from bs4 import BeautifulSoup
@@ -14,9 +13,6 @@ from bs4 import BeautifulSoup
 def search(request):
   if request.method == 'POST' and request.FILES.get('image'):
     uploaded_file = request.FILES['image']
-
-
-    import os
 
     # 'uploads' 폴더가 없으면 생성
     uploads_dir = os.path.join(settings.MEDIA_ROOT, 'uploads')
@@ -57,35 +53,20 @@ def result(request):
     return JsonResponse({"error": "Feature extraction failed"}, status=500)
 
   prediction = predict(features)  # 예측 수행
+  prediction = prediction.replace('_', ' ')
 
   if prediction is None:
     return JsonResponse({"error": "Prediction failed"}, status=500)
 
-  url = "https://www.wikiart.org/en/"+prediction
+  url = "https://en.wikipedia.org/wiki/" + prediction
   response = requests.get(url)
 
   # 응답이 정상인지 확인
   if response.status_code == 200:
     soup = BeautifulSoup(response.text, "html.parser")
+    style_html = soup.find('div', class_="mw-content-ltr mw-parser-output")
+    style_html = style_html.find('p').text if style_html else "<p>정보를 가져올 수 없습니다.</p>"
+  else:
+    style_html = "정보를 가져올 수 없습니다."
 
-    # <article> 태그 가져오기
-    article = soup.find("article")
-
-    if article:
-      # 특정 클래스를 가진 <li> 요소 제거
-      for li in article.find_all("li", class_="order-reproduction"):
-        li.decompose()  # 해당 요소 삭제
-
-      for li in soup.find_all("li"):
-        for a_tag in li.find_all('a'):
-          if a_tag and not a_tag["href"].startswith("http"):
-            a_tag.unwrap()  # <a> 태그를 제거하고 내부 텍스트만 유지
-
-      # 변경된 HTML을 문자열로 변환
-      style_html = str(article)
-
-    else:
-      style_html = "<p>정보를 가져올 수 없습니다.</p>"
-
-
-  return render(request, 'style/result.html', {'img_url': img_url, "artist_html": style_html})
+  return render(request, 'style/result.html', {'img_url': img_url, 'pred':prediction, 'style_html':style_html})
