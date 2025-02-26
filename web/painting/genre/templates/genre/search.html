@@ -19,11 +19,18 @@
 <div class="container-fluid" style="position: relative; z-index: 1;  margin-top: -100px;">
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <img
-      class="rounded mx-auto d-block img-fluid"
-      src="{% static 'img/file.png' %}" alt="">
 
-    <input class= "d-block mx-auto" type="file" name="image" id="image" accept="image/*">
+    <!-- 파일 업로드 아이콘 -->
+    <img class="rounded mx-auto d-block img-fluid upload-icon"
+      src="{% static 'img/up1.jfif' %}" alt="파일업로드"
+      onclick="document.getElementById('image').click();">
+
+    <br>
+
+    <!-- 숨겨진 파일 업로드 input -->
+    <input class="d-block mx-auto" type="file" name="image" id="image" accept="image/*" style="display: none;" onchange="updateFileName()">
+
+    <p id="fileName" class="text-center mt-2"></p>
 
     <br>
 
