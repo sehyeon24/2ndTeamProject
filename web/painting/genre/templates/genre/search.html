@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}genre 검색{% endblock %}
+{% block title %}artist 검색{% endblock %}
 {% block content %}
 {% load static %}
 <div class="container-fluid" style="position: relative; z-index: 2;">
@@ -8,34 +8,28 @@
       <a class="nav-link" href="/style">Style</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="/genre">Genre</a>
+      <a class="nav-link" href="/genre">Genre</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="/artist">Artist</a>
+      <a class="nav-link active" aria-current="page" href="/artist">Artist</a>
     </li>
   </ul>
 </div>
 
+
 <div class="container-fluid" style="position: relative; z-index: 1;  margin-top: -100px;">
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    <img
+      class="rounded mx-auto d-block img-fluid"
+      src="{% static 'img/file.png' %}" alt="">
 
-    <!-- 파일 업로드 아이콘 -->
-    <img class="rounded mx-auto d-block img-fluid upload-icon"
-      src="{% static 'img/up1.jfif' %}" alt="파일업로드"
-      onclick="document.getElementById('image').click();">
-
-    <br>
-
-    <!-- 숨겨진 파일 업로드 input -->
-    <input class="d-block mx-auto" type="file" name="image" id="image" accept="image/*" style="display: none;" onchange="updateFileName()">
-
-    <p id="fileName" class="text-center mt-2"></p>
+    <input class= "d-block mx-auto" type="file" name="image" id="image" accept="image/*">
 
     <br>
 
     <div class="d-grid gap-2 col-2 mx-auto">
-      <button class="btn btn-primary" type="submit" onclick="location='/genre/result'">Upload</button>
+      <button class="btn btn-primary" type="submit" onclick="location='/artist/result'">Upload</button>
     </div>
   </form>
 
