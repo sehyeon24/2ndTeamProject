@@ -6,3 +6,6 @@ painting/__pycache__/
 genre/__pycache__/
 artist/__pycache__/
 style/__pycache__/
+genre/migrations/__pycache__/
+artist/migrations/__pycache__/
+style/migrations/__pycache__/
