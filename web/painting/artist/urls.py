@@ -11,7 +11,3 @@ urlpatterns = [
   path('result/', artist.views.result, name='result'),
   # path('output/', artist.views.output, name='output'),
 ]
-
-# 개발 환경에서 미디어 파일 서빙
-if settings.DEBUG:
-  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
