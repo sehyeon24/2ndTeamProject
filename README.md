@@ -12,31 +12,27 @@
   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
   <img src="https://img.shields.io/badge/tensorflow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white">
   <img src="https://img.shields.io/badge/scikitlearn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white">
-  <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
   <img src="https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy&logoColor=white">
   <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white">
   <p>
   <img src="https://img.shields.io/badge/Anaconda-44A833?style=for-the-badge&logo=Anaconda&logoColor=white"> 
   <img src="https://img.shields.io/badge/jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white">
   <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&logo=pycharm&logoColor=white">
+  <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
 </div>
 
-![깃허브 스택](https://github-readme-stats.vercel.app/api?username=sehyeon24&show_icons=true&theme=shadow_green)
-
-![깃허브 언어 사용 순위](https://github-readme-stats.vercel.app/api/top-langs/?username=sehyeon24&layout=compact&theme=dark)
-
 ## 목차
-[1. 프로젝트 배경]()<br>
-[2. 팀 구성 및 역할]()<br>
-[3. Gantt Chart]()<br>
-[4. 개발환경]()<br>
-[5. 데이터 전처리]()<br>
-[6. 시각화]()<br>
-[7. CNN]()<br>
-[8. ML]()<br>
-[9. 웹 페이지]()<br>
-[10. 결론 및 개선방안]()<br>
+[1. 프로젝트 배경](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%EA%B2%BD)<br>
+[2. 팀 구성 및 역할](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#2-%ED%8C%80-%EA%B5%AC%EC%84%B1-%EB%B0%8F-%EC%97%AD%ED%95%A0)<br>
+[3. Gantt Chart](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#3-gantt-chart)<br>
+[4. 개발환경](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#4-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD)<br>
+[5. 데이터 전처리](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC)<br>
+[6. 시각화](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#6-%EC%8B%9C%EA%B0%81%ED%99%94)<br>
+[7. CNN](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#7-cnn)<br>
+[8. ML](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#8-ml)<br>
+[9. 웹 페이지](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#9-%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80)<br>
+[10. 결론 및 개선방안](https://github.com/sehyeon24/2ndTeamProject?tab=readme-ov-file#10-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B0%9C%EC%84%A0%EB%B0%A9%EC%95%88)<br>
 
 ## 1. 프로젝트 배경
 ![Image](https://github.com/user-attachments/assets/2e3bf1ca-846f-4c29-8a1a-97efbecbb6ed)
