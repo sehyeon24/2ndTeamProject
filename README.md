@@ -67,4 +67,4 @@
 ## 10. 결론 및 개선방안
 ![Image](https://github.com/user-attachments/assets/a48b5198-ef42-4dcc-a1dd-8b3438c201c0)
 
-![Image](https://github.com/user-attachments/assets/bd583090-3ebe-43c8-8813-8f27caa6d120)
+![Image](https://github.com/user-attachments/assets/1cf26ac6-e82d-43ff-b8d1-a30ad6c77d82)
