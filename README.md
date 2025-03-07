@@ -41,7 +41,7 @@
 ## 3. Gantt Chart
 ![Image](https://github.com/user-attachments/assets/be97aa0a-3513-4ee6-afdd-fddddea50987)
 ## 4. 개발환경
-![Image](https://github.com/user-attachments/assets/59006580-6dfb-4abe-a76b-ddcbaf5f85b9)
+![Image](https://github.com/user-attachments/assets/40eac35f-3f1f-4c1d-b87f-32abfeb719c7)
 ## 5. 데이터 전처리
 ![Image](https://github.com/user-attachments/assets/7bee51d5-39ab-4957-a127-764afff6eb2d)
 
@@ -65,6 +65,6 @@
 
 ![Image](https://github.com/user-attachments/assets/d8adebd8-3dbe-44d3-a60c-9a990f6481e5)
 ## 10. 결론 및 개선방안
-![Image](https://github.com/user-attachments/assets/36b8381b-ccdd-4e73-8a15-93ea0ab7b713)
+![Image](https://github.com/user-attachments/assets/a48b5198-ef42-4dcc-a1dd-8b3438c201c0)
 
 ![Image](https://github.com/user-attachments/assets/bd583090-3ebe-43c8-8813-8f27caa6d120)
